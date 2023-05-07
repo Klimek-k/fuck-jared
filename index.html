@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>FUCK JARED</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+
+    <div id="icon-wrapper">
+        <div id="icon-bar">
+            <a href="#">
+                <img class="icon" src="images/twitter.webp" alt="twitter">
+            </a>
+            <a href="#">
+                <img class="icon" src="images/telegram.png" alt="telegram">
+            </a>
+            <a href="#">
+                <img class="icon" src="images/subway.png" alt="strona">
+            </a>
+            <a href="#">
+                <img  class="icon"src="images/dex.png" alt="dexscanner">
+            </a>
+            <a href="#">
+                <img class="icon" src="images/etherscan.png" alt="etherscan">
+            </a>
+        </div>
+    </div>
+    <div id="gif-wrapper">
+        <img id="punchpng" src="images/punch.png" alt="punch">
+        <span>Click to punch</span>
+    </div>
+    <div id="faq-wrapper">
+        <div id="faq-container">
+            <a class="togglefaq" href="#">
+                WHAT IS $FKJRD? 
+                <i class="fa-solid fas fa-plus"></i>
+            </a>
+            <div class="faqanswer none">
+                <p>Due to our blacklist feature, $FKJRD is the first MEV FREE token on the Ethereum blockchain. Our goal
+                    is to protect our holders from exploiters and bad actors such as jaredfromsubway.eth.
+                </p>
+            </div>
+            <a class="togglefaq" href="#">
+                HOW TO BUY #FKJRD?
+                <i class="fa-solid fas fa-plus"></i>
+            </a>
+            <div class="faqanswer none">
+                <p>The $FKJRD token will be fairlaunched on the Ethereum network and will be purchasable on Uniswap. The
+                    contract address is not out yet, but will be published on our Telegram and Twitter.
+                </p>
+            </div>
+            <a class="togglefaq" href="#">
+                WHAT'S THE UTILITY BEHIND $FKJRD?
+                <i class="fa-solid fas fa-plus"></i>
+            </a>
+            <div class="faqanswer none">
+                <p>Every holder will get access to our private alpha group with some of the best callers in the space.
+                    We're also going to release a dedicated, private RPC node for $FKJRD community. This is just the
+                    beginning. More details on $FKJRD utility coming soon.
+                </p>
+            </div>
+            <div id="bottom"></div>
+        </div>
+    </div>
+
+    <script>
+
+        const punchpng = document.querySelector("#punchpng");
+
+        punchpng.addEventListener("click", function () {
+            const originalSrc = punchpng.src;
+            if (punchpng.src.includes("images/punch.png")) {
+                punchpng.src = "images/punch.gif";
+            } else {
+                punchpng.src = "images/punch.png";
+            }
+            setTimeout(function () {
+                punchpng.src = originalSrc;
+            }, 800);
+        });
+
+        const links = document.querySelectorAll("#faq-container a");
+
+links.forEach(function(link) {
+  link.addEventListener("click", function(event) {
+    event.preventDefault();
+    const icon = this.querySelector("i");
+    icon.classList.toggle("fa-minus");
+    icon.classList.toggle("fa-plus");
+    const text = this.nextElementSibling;
+    text.classList.toggle("none");
+    text.classList.toggle("active");
+  });
+});
+
+
+    </script>
+    
+</body>
+</html>
